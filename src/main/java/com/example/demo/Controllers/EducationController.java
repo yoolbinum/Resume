@@ -52,5 +52,4 @@ public class EducationController {
         educationRepository.delete(id);
         return "redirect:" + educationDir;
     }
-
 }

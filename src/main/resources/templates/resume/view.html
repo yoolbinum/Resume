@@ -10,6 +10,7 @@
     <li><a href="/education/">Education</a></li>
     <li><a href="/experience/">Experience</a></li>
     <li><a href="/skill/">Skill</a></li>
+    <li><a href="/resume/view">Resume</a></li>
 </ul>
 
 <h2>Resume</h2>
@@ -22,9 +23,6 @@
 
         <td th:text="${resume.name}"></td>
         <td th:text="${resume.email}"></td>
-        <td>
-            <a th:href="@{/resume/update/{id}(id=${resume.id})}">Update Resume</a>
-        </td>
         <br/>
     </tr>
 </table>
@@ -42,12 +40,7 @@
         <td th:text="${education.major}"></td>
         <td th:text="${education.schoolName}"></td>
         <td th:text="${education.graduationDate}"></td>
-        <td>
-            <a th:href="@{/education/update/{id}(id=${education.id})}">Update</a> -
-            <a th:href="@{/education/delete/{id}(id=${education.id})}">Delete</a>
-        </td>
     </tr>
-    <a th:href="@{/education/add}">Create</a>
 </table>
 
 <h2>Experience</h2>
@@ -65,12 +58,7 @@
         <td th:text="${experience.startDate}"></td>
         <td th:text="${experience.endDate}"></td>
         <td th:text="${experience.duty}"></td>
-        <td>
-            <a th:href="@{/experience/update/{id}(id=${experience.id})}">Update</a> -
-            <a th:href="@{/experience/delete/{id}(id=${experience.id})}">Delete</a>
-        </td>
     </tr>
-    <a th:href="@{/experience/add}">Create</a>
 </table>
 
 <h2>Skills</h2>
@@ -82,12 +70,7 @@
     <tr th:each="skill : ${skills}">
         <td th:text="${skill.title}"></td>
         <td th:text="${skill.rating}"></td>
-        <td>
-            <a th:href="@{/skill/update/{id}(id=${skill.id})}">Update</a> -
-            <a th:href="@{/skill/delete/{id}(id=${skill.id})}">Delete</a>
-        </td>
     </tr>
-    <a th:href="@{/skill/add}">Create</a>
 </table>
 </body>
 </html>

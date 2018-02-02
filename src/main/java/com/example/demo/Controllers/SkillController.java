@@ -52,5 +52,6 @@ public class SkillController {
         skillRepository.delete(id);
         return "redirect:" + skillDir;
     }
+
 }
 
