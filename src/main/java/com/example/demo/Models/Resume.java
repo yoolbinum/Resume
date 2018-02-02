@@ -14,18 +14,10 @@ public class Resume {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @NotNull
     @Size(min=2)
     private String name;
 
-    @NotNull
     private String email;
-
-    private ArrayList<Education> educations;
-
-    private ArrayList<Experience> experiences;
-
-    private ArrayList<Skill> skills;
 
     public long getId() {
         return id;
@@ -49,29 +41,5 @@ public class Resume {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public ArrayList<Education> getEducations() {
-        return educations;
-    }
-
-    public void setEducations(ArrayList<Education> educations) {
-        this.educations = educations;
-    }
-
-    public ArrayList<Experience> getExperiences() {
-        return experiences;
-    }
-
-    public void setExperiences(ArrayList<Experience> experiences) {
-        this.experiences = experiences;
-    }
-
-    public ArrayList<Skill> getSkills() {
-        return skills;
-    }
-
-    public void setSkills(ArrayList<Skill> skills) {
-        this.skills = skills;
     }
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li><a href="/resume/">Resume</a></li>
+    <li><a href="/education/">Education</a></li>
+    <li><a href="/experience/">Experience</a></li>
+    <li><a href="/skill/">Skill</a></li>
+</ul>
+
+<h2>Experience</h2>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Employer Name</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Duty</th>
+    </tr>
+    <tr th:each="experience : ${experiences}">
+        <td th:text="${experience.title}"></td>
+        <td th:text="${experience.employerName}"></td>
+        <td th:text="${experience.startDate}"></td>
+        <td th:text="${experience.endDate}"></td>
+        <td th:text="${experience.duty}"></td>
+        <td>
+            <a th:href="@{/experience/update/{id}(id=${experience.id})}">Update</a> -
+            <a th:href="@{/experience/delete/{id}(id=${experience.id})}">Delete</a>
+        </td>
+    </tr>
+    <a th:href="@{/experience/add}">Create</a>
+</table>
+</body>
+</html>
