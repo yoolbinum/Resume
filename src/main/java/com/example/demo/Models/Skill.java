@@ -16,6 +16,7 @@ public class Skill {
     private long id;
 
     @NotNull
+    @Size(min=1)
     private String title;
 
     @Min(1)

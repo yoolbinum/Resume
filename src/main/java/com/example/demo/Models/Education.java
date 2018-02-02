@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Education {
@@ -14,15 +15,19 @@ public class Education {
     private long id;
 
     @NotNull
+    @Size(min=1)
     private String schoolName;
 
     @NotNull
+    @Size(min=1)
     private String major;
 
     @NotNull
+    @Size(min=1)
     private String graduationDate;
 
     @NotNull
+    @Size(min=1)
     private String title;
 
     public long getId() {

@@ -1,5 +1,7 @@
 package com.example.demo.Models;
 
+import org.hibernate.validator.constraints.Email;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +19,7 @@ public class Resume {
     @Size(min=2)
     private String name;
 
+    @Email
     private String email;
 
     public long getId() {
