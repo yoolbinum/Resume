@@ -1,4 +1,4 @@
-package com.example.demo.Models;
+package com.example.demo.domains;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,9 +19,10 @@ public class Skill {
     @Size(min=1)
     private String title;
 
-    @Min(1)
-    @Max(5)
-    private int rating;
+    private enum rating{
+        beginner, intermediate, proficient
+    }
+
 
     public long getId() {
         return id;
@@ -39,11 +40,4 @@ public class Skill {
         this.title = title;
     }
 
-    public int getRating() {
-        return rating;
-    }
-
-    public void setRating(int rating) {
-        this.rating = rating;
-    }
 }

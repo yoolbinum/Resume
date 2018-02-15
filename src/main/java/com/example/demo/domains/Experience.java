@@ -1,6 +1,4 @@
-package com.example.demo.Models;
-
-import org.springframework.format.annotation.DateTimeFormat;
+package com.example.demo.domains;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

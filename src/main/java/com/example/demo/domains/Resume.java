@@ -1,14 +1,10 @@
-package com.example.demo.Models;
+package com.example.demo.domains;
 
 import org.hibernate.validator.constraints.Email;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Resume {
@@ -16,11 +12,22 @@ public class Resume {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Column(name = "image")
+    private String image;
+
     @Size(min=2)
+    @Column(name = "name")
     private String name;
 
     @Email
+    @Column(name = "email")
     private String email;
+
+    private List<Education> educations;
+
+    private List<Experience> experiences;
+
+    private List<Skill> skills;
 
     public long getId() {
         return id;
